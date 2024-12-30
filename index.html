@@ -1,0 +1,246 @@
+<!-- CSS code starts here -->
+<style>
+  :root {
+    --logo-blue: rgba(0, 0, 0, 0);
+    --darker-blue: rgba(0, 0, 0, 0);
+    --lighter-blue: rgba(0, 0, 0, 0);
+    --even-lighter-blue: rgba(0, 0, 0, 0);
+    --lightest-blue: rgba(0, 0, 0, 0);
+    --dark-orange: rgba(0 0, 0, 0);
+    --light-orange: rgba(0, 0, 0, 0);
+    --even-lighter-orange: rgba(0, 0, 0, 0);
+    --green: rgba(0, 0, 0, 0);
+  }
+
+  body {
+    background-color: #252525;
+    color: #fff;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .top {
+    position: relative;
+    background: #252525 !important;
+    margin-top: -5px;
+    height: 73px;
+  }
+
+  .top::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    border-right: 40px solid #151515;
+  }
+
+  .top .left {
+    position: relative;
+    padding: 0 70px;
+  }
+
+  .top .left::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: -15px;
+    left: 29px;
+    border-right: 50px solid transparent;
+    border-bottom: 75px solid #151515;
+  }
+
+  .top .left .logo {
+    margin: 0;
+  }
+
+  .top .center {
+    position: relative;
+    box-shadow: 0 1px 0 #151515;
+    border-bottom: 1px solid #222222;
+    background: #151515;
+    padding: 0 0 10px 0;
+    font-size: 10px;
+  }
+
+  .top .center::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40px;
+    border-right: 40px solid #151515;
+    border-bottom: 46px solid transparent;
+  }
+
+  .top .center:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 38px;
+    text-align: right;
+  }
+
+  .top .center form {
+    padding: 15px 30px 0 0;
+    font-style: italic;
+  }
+
+  .top .center form .search-wrapper {
+    margin-left: 3px;
+  }
+
+  .top .center form .search-wrapper input {
+    transform: skew(-20deg);
+    background: #303030;
+    border: none;
+    width: 200px;
+    height: 20px;
+    color: #fff;
+  }
+
+  .top .center form .search-wrapper input:focus-visible {
+    outline: none;
+  }
+
+  .top .center form button {
+    padding: 1px 5px;
+  }
+
+  .top .center form button:hover {
+    cursor: pointer;
+  }
+
+  .top .right {
+    font-size: 10px;
+  }
+
+  .top .right::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: -12px;
+    right: -30px;
+    border-right: 25px solid #151515;
+    border-bottom: 32px solid transparent;
+  }
+
+  .top .right:nth-child(3) {
+    position: absolute;
+    bottom: 7px;
+    right: 70px;
+  }
+
+  nav .links {
+    position: relative;
+    box-shadow: 0 1px 0 #151515, 0 -5px 8px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid #242424;
+    border-bottom: 1px solid #242424;
+    background: #151515;
+    padding: 10px 0 7px 0;
+    height: 100%;
+    text-align: center;
+    color: #616161;
+  }
+
+  nav .links::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    left: 0;
+    border-left: 40px solid #151515;
+    border-bottom: 70px solid #151515;
+  }
+
+  nav .links a {
+    padding: 5px 5px;
+  }
+
+  nav .links a,
+  .top .center form button {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    transform: skew(-20deg);
+    transition: color 0.5s ease;
+    border: 1px solid #646464;
+    text-shadow: none;
+    background: #151515;
+    margin: 0 3px 0 3px;
+    text-decoration: none;
+    color: #969696;
+  }
+
+  nav .links a::after,
+  .top .center form button::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -100%;
+    transition: left 0.3s ease;
+    background: #646464;
+    width: 100%;
+    height: 100%;
+  }
+
+  nav .links a:hover::after,
+  .top .center form button:hover::after {
+    left: 0;
+  }
+
+  nav .links a:hover,
+  .top .center form button:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  nav .links a .icon {
+    display: none;
+  }
+
+  nav .links li:not(:last-child)::after {
+    content: "";
+  }
+
+  main {
+    background: rgba(0, 0, 0, 0);
+    width: 100%;
+  }
+
+  .profile {
+    margin: 0 auto 10px;
+    width: 810px;
+    max-width: 100%;
+    background-color: #404040;
+    color: #fff;
+    clip-path: polygon(
+      0 50px,
+      50px 0,
+      0 0,
+      100% 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 100%
+    );
+  }
+
+  .profile a {
+    color: cyan;
+  }
+
+  .profile h1 {
+    display: none;
+  }
+
+  .profile-pic img {
+    border-radius: 50%;
+  }
+
+  footer {
+    background: rgba(0, 0, 0, 0);
+  }
+</style>
+<!-- CSS code ends here -->
