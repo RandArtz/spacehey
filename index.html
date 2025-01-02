@@ -10,6 +10,10 @@
     --light-orange: rgba(0, 0, 0, 0);
     --even-lighter-orange: rgba(0, 0, 0, 0);
     --green: rgba(0, 0, 0, 0);
+
+    --cube-size: 150px;
+    --cube-depth: calc((var(--cube-size) / 2));
+    --cube-bg: url("https://tommypanzram.neocities.org/SpaceHeyImages/mainprofile.png");
   }
 
   body {
@@ -213,18 +217,8 @@
     margin: 0 auto 10px;
     width: 810px;
     max-width: 100%;
-    background-color: #404040;
+
     color: #fff;
-    clip-path: polygon(
-      0 50px,
-      50px 0,
-      0 0,
-      100% 0,
-      100% 0,
-      100% 100%,
-      0 100%,
-      0 100%
-    );
   }
 
   .profile a {
@@ -235,12 +229,127 @@
     display: none;
   }
 
-  .profile-pic img {
-    border-radius: 50%;
+  .general-about {
+    background-color: #404040;
+    padding: 220px 0 20px 0;
+    text-align: center;
+  }
+
+  .general-about .profile-pic {
+    display: none;
+  }
+
+  .general-about,
+  .contact,
+  .table-section {
+    clip-path: polygon(0 25px, 25px 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .mood,
+  .profile .url-info {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .profile .url-info {
+    margin: 0;
+  }
+
+  .profile .table-section {
+    margin: 20px 0;
+  }
+
+  .mood,
+  .contact,
+  .url-info,
+  .blog-preview,
+  .blurbs,
+  .friends {
+    padding: 10px;
+    background-color: #404040;
+  }
+
+  .heading {
+    text-align: center;
   }
 
   footer {
     background: rgba(0, 0, 0, 0);
   }
+
+  /* 3D Cube Profile Picture */
+
+  @keyframes rotation {
+    from {
+      transform: translateZ(-100px) rotateY(-180deg) rotateZ(-180deg);
+    }
+    to {
+      transform: translateZ(-100px) rotateY(180deg) rotateZ(180deg);
+    }
+  }
+
+  .scene {
+    position: relative;
+    bottom: 130px;
+    right: 270px;
+    perspective: 600px;
+    align-items: center;
+  }
+
+  .cube {
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotation 10s infinite linear;
+    width: var(--cube-size);
+    height: var(--cube-size);
+  }
+
+  .cube-face {
+    position: absolute;
+    border: 1px solid #161616;
+    background: var(--cube-bg);
+    background-size: cover;
+    width: var(--cube-size);
+    height: var(--cube-size);
+  }
+
+  .cube-front {
+    transform: rotateY(0deg) translateZ(var(--cube-depth));
+  }
+
+  .cube-back {
+    transform: rotateY(180deg) translateZ(var(--cube-depth));
+  }
+
+  .cube-left {
+    transform: rotateY(-90deg) translateZ(var(--cube-depth));
+  }
+
+  .cube-right {
+    transform: rotateY(90deg) translateZ(var(--cube-depth));
+  }
+
+  .cube-top {
+    transform: rotateX(90deg) translateZ(var(--cube-depth));
+  }
+
+  .cube-bottom {
+    transform: rotateX(-90deg) translateZ(var(--cube-depth));
+  }
 </style>
 <!-- CSS code ends here -->
+
+<!-- HTML code starts here -->
+
+<div class="scene">
+  <div class="cube">
+    <div class="cube-face cube-front"></div>
+    <div class="cube-face cube-back"></div>
+    <div class="cube-face cube-left"></div>
+    <div class="cube-face cube-right"></div>
+    <div class="cube-face cube-top"></div>
+    <div class="cube-face cube-bottom"></div>
+  </div>
+</div>
+
+<!-- HTML code ends here -->
