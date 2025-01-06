@@ -16,8 +16,21 @@
     --cube-bg: url("https://tommypanzram.neocities.org/SpaceHeyImages/mainprofile.png");
   }
 
+  @keyframes bg-anim {
+    0% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
   body {
-    background-color: #404040;
+    background: url("https://i.ibb.co/M21q1PP/bg.gif");
+  background-repeat: no-repeat
+  	background-attachment: fixed;
+  	background-size: 100% 100%;
+  image-rendering: crisp-edges;
     color: #fff;
   }
 
@@ -27,7 +40,9 @@
 
   .top {
     position: relative;
-    background: #252525 !important;
+    animation: bg-anim 30s linear infinite;
+    background-color: #242424 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23323232' stroke-width='7.4' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E") !important;
     margin-top: -5px;
     height: 73px;
   }
@@ -163,6 +178,12 @@
 
   nav .links a,
   .top .center form button {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    transform: skew(-20deg);
+    transition: color 0.5s ease;
+    border: 1px solid #646464;
     text-shadow: none;
     background: #151515;
     margin: 0 3px 0 3px;
@@ -170,10 +191,28 @@
     color: #969696;
   }
 
+  nav .links a::after,
+  .top .center form button::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -100%;
+    transition: left 0.3s ease;
+    background: #646464;
+    width: 100%;
+    height: 100%;
+  }
+
+  nav .links a:hover::after,
+  .top .center form button:hover::after {
+    left: 0;
+  }
+
   nav .links a:hover,
   .top .center form button:hover {
     text-decoration: none;
-    color: #fafafa;
+    color: black;
   }
 
   nav .links a .icon {
@@ -190,16 +229,14 @@
   }
 
   .profile {
-    position: absolute;
-    border: 2px solid #151515;
-    margin-left: 200px;
-    margin-top: -6px;
-    width: calc(100% - 300px);
+    margin: 0 auto 10px;
+    width: 810px;
+    max-width: 100%;
     color: #fff;
   }
 
   .profile a {
-    color: white;
+    color: cyan;
   }
 
   .profile h1 {
@@ -215,93 +252,10 @@
     display: none;
   }
 
-  .profile .contact {
-    position: absolute;
-    top: -20px;
-    left: -200px;
-    background-color: #151515;
-    width: 200px;
-    min-height: calc(100vh + 90%);
-  }
-
-  .profile .contact::before {
-    content: "";
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    right: -40px;
-    border-left: 40px solid #151515;
-    border-bottom: 40px solid transparent;
-  }
-
-  .profile .contact .heading {
-    display: none;
-  }
-
-  .contact .inner {
-    margin-top: 35px;
-  }
-
-  .contact .inner .f-row {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 0 15px;
-  }
-
-  .contact .inner .f-col {
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-
-  .contact .inner .f-col a {
-    padding: 5px;
-    width: 160px;
-  }
-
-  .contact .inner .f-col a,
-  .top .center form button {
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    transform: skew(-20deg);
-    transition: color 0.5s ease;
-    border: 1px solid #646464;
-    text-shadow: none;
-    background: #151515;
-    margin: 0 3px 0 3px;
-    text-decoration: none;
-    color: #969696;
-  }
-
-  .contact .inner .f-col a::after,
-  .top .center form button::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: -100%;
-    transition: left 0.3s ease;
-    background: #646464;
-    width: 100%;
-    height: 100%;
-  }
-
-  .contact .inner .f-col a:hover::after,
-  .top .center form button:hover::after {
-    left: 0;
-  }
-
-  .contact .inner .f-col a:hover,
-  .top .center form button:hover {
-    text-decoration: none;
-    color: black;
-  }
-
-  .contact .inner .f-col a .icon {
-    transform: skew(15deg);
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+  .general-about,
+  .contact,
+  .table-section {
+    clip-path: polygon(0 25px, 25px 0, 100% 0, 100% 100%, 0 100%);
   }
 
   .mood,
@@ -318,12 +272,21 @@
     margin: 20px 0;
   }
 
+  .general-about,
+  .mood,
+  .contact,
+  .url-info,
+  .blog-preview,
+  .blurbs,
+  .friends {
+    background-color: rgba(96,96,96,0.5)
+  }
+
   .heading {
     text-align: center;
   }
 
   footer {
-    visibility: hidden;
     background: rgba(0, 0, 0, 0);
   }
 
