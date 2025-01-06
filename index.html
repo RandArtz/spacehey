@@ -26,12 +26,25 @@
   }
 
   body {
-    background: url("https://github.com/RandArtz/spacehey/blob/main/bg.gif?raw=true");
-  background-repeat: no-repeat
-  	background-attachment: fixed;
-  	background-size: 100% 100%;
-  image-rendering: crisp-edges;
+    background-color: #000; /* Color de fondo si la imagen no se carga */
     color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("https://github.com/RandArtz/spacehey/blob/main/bg.gif?raw=true")
+      no-repeat fixed;
+    background-color: #151515;
+    background-size: 100% 100%;
+    image-rendering: crisp-edges;
+    z-index: -1;
   }
 
   .container {
@@ -279,7 +292,7 @@
   .blog-preview,
   .blurbs,
   .friends {
-    background-color: rgba(96,96,96,0.5)
+    background-color: rgba(64, 64, 64, 0.7);
   }
 
   .heading {
