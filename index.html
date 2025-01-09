@@ -26,7 +26,7 @@
   }
 
   body {
-    background-color: #000;
+    background-color: #161616;
   }
 
   .container {
@@ -125,7 +125,7 @@
 
   .top .center form .search-wrapper input {
     transform: skew(-20deg);
-    background: #242424;
+    background: #323232;
     border: none;
     width: 200px;
     height: 20px;
@@ -167,8 +167,8 @@
   nav .links {
     position: relative;
     box-shadow: 0 1px 0 #161616, 0 -5px 8px rgba(0, 0, 0, 0.3);
-    border-top: 1px solid #242424;
-    border-bottom: 1px solid #242424;
+    border-top: 1px solid #323232;
+    border-bottom: 1px solid #323232;
     background: #161616;
     padding: 10px 0 7px 0;
     height: 100%;
@@ -256,7 +256,7 @@
     justify-content: space-between;
     align-items: flex-start;
     margin: 0 auto 10px;
-    width: 840px;
+    width: 810px;
     max-width: 100%;
     text-align: left;
     color: #fff;
@@ -273,7 +273,7 @@
   .profile .left {
     position: relative;
     background-color: #161616;
-    border: 1px solid #242424;
+    border: 1px solid #323232;
     clip-path: polygon(
       0 50px,
       50px 0,
@@ -282,19 +282,27 @@
       calc(100% - 50px) 100%,
       0 100%
     );
-    width: calc(50% - 70px);
   }
 
   .profile .right {
     background-color: #161616;
-    border: 1px solid #242424;
-    max-width: 25vw;
+    border: 1px solid #323232;
+    max-width: calc(50% + 70px);
   }
 
   .general-about {
     position: relative;
     padding: 220px 0 20px 0;
     text-align: center;
+  }
+
+  .general-about::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #323232;
   }
 
   .general-about .profile-pic {
@@ -313,10 +321,10 @@
     box-shadow: 0 6px 0 #323232;
     background: #161616;
     margin-bottom: 5px;
-    margin-left: -3px;
-    padding: 3px;
-    width: 155px;
-    height: 30px;
+    margin-left: -15px;
+    padding: 5px;
+    width: 145px;
+    height: 25px;
     text-align: center;
     text-decoration: none;
     color: #969696;
@@ -343,12 +351,22 @@
     filter: grayscale(100%);
   }
 
-  .contact .heading,
-  .table-section .heading,
-  .blurbs .heading,
-  .friends .heading {
-    margin: 0 -11px 0 -11px;
-    background-color: #242424 !important;
+  .url-info::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top: 50px solid transparent;
+    border-right: 50px solid #323232;
+  }
+
+  .table-section .inner p {
+    color: #646464;
+  }
+
+  .heading {
+    margin: 0 -9px 0 -9px;
+    background-color: #323232 !important;
     position: relative;
     clip-path: polygon(
       20px 0,
@@ -360,9 +378,6 @@
       0 calc(100% - 10px),
       0 10px
     );
-  }
-
-  .heading {
     text-align: center;
   }
 
