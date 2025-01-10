@@ -42,11 +42,15 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: url("https://github.com/RandArtz/spacehey/blob/main/bg.gif?raw=true")
-      no-repeat;
+    bottom: -50%;
+    background: linear-gradient(
+        to bottom,
+        rgba(22, 22, 22, 0) 70%,
+        #161616 100%
+      ),
+      url("https://github.com/RandArtz/spacehey/blob/main/bg.gif?raw=true")
+        no-repeat;
     background-color: #161616;
-    background-position: 0 100px;
     background-size: 100% 100%;
     image-rendering: crisp-edges;
   }
@@ -252,9 +256,6 @@
   }
 
   .profile {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     margin: 0 auto 10px;
     width: 810px;
     max-width: 100%;
@@ -270,43 +271,38 @@
     display: none;
   }
 
-  .profile .left {
-    position: relative;
-    background-color: #161616;
-    border: 1px solid #323232;
-    clip-path: polygon(
-      0 50px,
-      50px 0,
-      100% 0,
-      100% calc(100% - 50px),
-      calc(100% - 50px) 100%,
-      0 100%
-    );
-  }
-
-  .profile .right {
-    background-color: #161616;
-    border: 1px solid #323232;
-    max-width: calc(50% + 70px);
-  }
-
   .general-about {
     position: relative;
     padding: 220px 0 20px 0;
     text-align: center;
   }
 
-  .general-about::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    border-bottom: 50px solid transparent;
-    border-left: 50px solid #323232;
-  }
-
   .general-about .profile-pic {
     display: none;
+  }
+
+  .mood {
+    position: relative;
+    border: 1px solid #323232;
+    background-color: #161616;
+    text-align: center;
+    clip-path: polygon(
+      0 15px,
+      15px 0,
+      100% 0,
+      100% calc(100% - 15px),
+      calc(100% - 15px) 100%,
+      0 100%
+    );
+  }
+
+  .mood::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #323232;
   }
 
   .contact .inner {
@@ -322,10 +318,10 @@
     background: #161616;
     margin-bottom: 5px;
     margin-left: -15px;
+    padding-left: 20px !important;
     padding: 5px;
     width: 145px;
     height: 25px;
-    text-align: center;
     text-decoration: none;
     color: #969696;
   }
@@ -346,39 +342,21 @@
     box-shadow: 0 1px 0 #646464;
   }
 
-  .contact .inner a .icon {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+  .contact .inner a img {
+    font-size: 0;
   }
 
-  .url-info::before {
+  .contact .inner a img:before {
+    font-size: 1em;
+    display: block;
+  }
+
+  .contact .inner .f-row:nth-child(1) .f-col:nth-child(1) a:before {
     content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-top: 50px solid transparent;
-    border-right: 50px solid #323232;
   }
 
   .table-section .inner p {
     color: #646464;
-  }
-
-  .heading {
-    margin: 0 -9px 0 -9px;
-    background-color: #323232 !important;
-    position: relative;
-    clip-path: polygon(
-      20px 0,
-      calc(100% - 20px) 0,
-      100% 10px,
-      100% calc(100% - 10px),
-      calc(100% - 20px) 100%,
-      20px 100%,
-      0 calc(100% - 10px),
-      0 10px
-    );
-    text-align: center;
   }
 
   footer {
