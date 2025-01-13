@@ -1,5 +1,7 @@
 <!-- CSS code starts here -->
 <style>
+  @import url("https://fonts.cdnfonts.com/css/poland-canned-into-vaporwave");
+
   :root {
     --logo-blue: rgba(0, 0, 0, 0);
     --darker-blue: rgba(0, 0, 0, 0);
@@ -282,10 +284,17 @@
   }
 
   .mood {
-    position: relative;
-    border: 1px solid #323232;
-    background-color: #161616;
+    margin-bottom: 7px;
+    padding-top: 5px;
     text-align: center;
+  }
+
+  .mood,
+  .contact,
+  .table-section {
+    position: relative;
+    border: 1px solid #323232 !important;
+    background-color: #161616;
     clip-path: polygon(
       0 15px,
       15px 0,
@@ -296,7 +305,9 @@
     );
   }
 
-  .mood::before {
+  .mood::before,
+  .contact::before,
+  .table-section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -305,7 +316,29 @@
     border-left: 15px solid #323232;
   }
 
+  .mood::after,
+  .contact::after,
+  .table-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #323232;
+  }
+
+  .contact .heading,
+  .table-section .heading {
+    border-bottom: 1px solid #323232;
+    padding: 5px 0 5px 0 !important;
+    font-family: "Poland canned into Vaporwave", sans-serif;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
   .contact .inner {
+    padding-bottom: 5px !important;
     text-align: center;
   }
 
@@ -318,11 +351,13 @@
     background: #161616;
     margin-bottom: 5px;
     margin-left: -15px;
-    padding-left: 20px !important;
-    padding: 5px;
-    width: 145px;
-    height: 25px;
+    padding-left: 30px !important;
+    padding: 3px;
+    width: 142px;
+    height: 20px;
+    text-align: left;
     text-decoration: none;
+    font-size: 10px;
     color: #969696;
   }
 
@@ -353,6 +388,27 @@
 
   .contact .inner .f-row:nth-child(1) .f-col:nth-child(1) a:before {
     content: "";
+  }
+
+  .table-section table {
+    border-spacing: 0;
+  }
+
+  .table-section td {
+    border-bottom: 1px solid #323232;
+    padding: 5px 0 5px 0;
+  }
+
+  .table-section td:first-child {
+    text-align: center;
+  }
+
+  .table-section td:first-child {
+    border-right: 1px solid #323232;
+  }
+
+  .table-section tr:last-child td {
+    border-bottom: none;
   }
 
   .table-section .inner p {
