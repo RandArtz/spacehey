@@ -201,7 +201,7 @@
     position: relative;
     display: inline-block;
     transform: skew(-20deg);
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
     border: 1px solid #323232;
     text-shadow: none;
     background: #161616;
@@ -291,7 +291,9 @@
 
   .mood,
   .contact,
-  .table-section {
+  .table-section,
+  .blog-preview,
+  .friends {
     position: relative;
     border: 1px solid #323232 !important;
     background-color: #161616;
@@ -307,7 +309,9 @@
 
   .mood::before,
   .contact::before,
-  .table-section::before {
+  .table-section::before,
+  .blog-preview::before,
+  .friends::before {
     content: "";
     position: absolute;
     top: 0;
@@ -318,7 +322,9 @@
 
   .mood::after,
   .contact::after,
-  .table-section::after {
+  .table-section::after,
+  .blog-preview::after,
+  .friends::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -328,12 +334,13 @@
   }
 
   .contact .heading,
-  .table-section .heading {
+  .table-section .heading,
+  .blurbs .heading {
     border-bottom: 1px solid #323232;
     padding: 5px 0 5px 0 !important;
     font-family: "Poland canned into Vaporwave", sans-serif;
     text-align: center;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 2px;
   }
 
@@ -390,6 +397,10 @@
     content: "";
   }
 
+  .table-section:first-of-type {
+    color: red !important;
+  }
+
   .table-section table {
     border-spacing: 0;
   }
@@ -415,6 +426,87 @@
     color: #646464;
   }
 
+  .profile-info {
+    border: 1px solid #323232;
+    background: rgba(22, 22, 22, 0.5);
+    font-family: "Poland canned into Vaporwave", sans-serif;
+  }
+
+  .blog-preview h4 {
+    font-family: "Poland canned into Vaporwave", sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  .blog-preview a {
+    font-family: sans-serif;
+    letter-spacing: 0;
+  }
+
+  .blurbs {
+    position: relative;
+  }
+
+  .blurbs::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #323232 !important;
+    background-color: #161616 !important;
+    clip-path: polygon(
+      0 15px,
+      15px 0,
+      100% 0,
+      100% calc(100% - 15px),
+      calc(100% - 15px) 100%,
+      0 100%
+    );
+  }
+
+  .blurbs .heading::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: -0.15em;
+    transform: rotate(-45deg);
+    background-color: #323232;
+    height: 1px;
+    width: 19px;
+  }
+
+  .blurbs .inner::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 6px;
+    right: -0.2em;
+    transform: rotate(-45deg);
+    background-color: #323232;
+    height: 1px;
+    width: 19px;
+  }
+
+  .friends {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .blog-preview h4,
+  .friends .heading {
+    border-bottom: 1px solid #323232;
+    padding: 5px 0 5px 0 !important;
+  }
+
+  .friends .heading h4 {
+    font-family: "Poland canned into Vaporwave", sans-serif;
+    letter-spacing: 2px;
+  }
+
   footer {
     background: rgba(0, 0, 0, 0);
   }
@@ -433,7 +525,7 @@
   .scene {
     position: relative;
     z-index: 3;
-    bottom: 130px;
+    bottom: 160px;
     right: 270px;
     perspective: 600px;
     align-items: center;
