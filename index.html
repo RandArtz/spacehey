@@ -265,8 +265,15 @@
     color: #fff;
   }
 
-  .profile a {
-    color: cyan;
+  .profile a,
+  .profile .count {
+    color: #004589;
+    text-decoration: none;
+  }
+
+  .profile a:hover {
+    text-decoration: underline;
+    text-decoration-style: dotted;
   }
 
   .profile h1 {
@@ -397,6 +404,14 @@
     content: "";
   }
 
+  .url-info,
+  .profile-info {
+    border: 1px solid #323232 !important;
+    background: rgba(22, 22, 22, 0.5);
+    text-align: center;
+    backdrop-filter: blur(1px);
+  }
+
   .table-section:first-of-type {
     color: red !important;
   }
@@ -427,8 +442,6 @@
   }
 
   .profile-info {
-    border: 1px solid #323232;
-    background: rgba(22, 22, 22, 0.5);
     font-family: "Poland canned into Vaporwave", sans-serif;
   }
 
@@ -493,13 +506,13 @@
 
   .friends {
     margin-bottom: 20px;
-    text-align: center;
   }
 
   .blog-preview h4,
   .friends .heading {
     border-bottom: 1px solid #323232;
     padding: 5px 0 5px 0 !important;
+    text-align: center;
   }
 
   .friends .heading h4 {
@@ -507,8 +520,23 @@
     letter-spacing: 2px;
   }
 
+  .friends .inner {
+    text-align: center;
+  }
+
+  .friends .person a:nth-child(2) img {
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    border-radius: 50%;
+  }
+
+  .friends .person a:nth-child(2) img:hover {
+    transform: rotateY(180deg);
+  }
+
   .comments-table {
     border: 0;
+    text-align: left;
   }
 
   .comments-table td {
@@ -521,12 +549,31 @@
     border-left: 1px solid #323232 !important;
   }
 
-  .comments-table td:last-child {
+  .comments-table tr:nth-last-child(1) td:nth-last-child(2),
+  .comments-table tr:last-child td:last-child {
     border-bottom: 1px solid #323232 !important;
   }
 
   footer {
-    background: rgba(0, 0, 0, 0);
+    animation: bg-anim 30s linear infinite;
+    border-top: 1px solid #323232;
+    box-shadow: inset 0px 2px 0px 0px #161616;
+    background-color: #242424 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23323232' stroke-width='7.4' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E") !important;
+  }
+
+  footer p {
+    display: table;
+    float: center;
+    border: 1px solid #323232;
+    border-radius: 20px;
+    background-color: rgba(22, 22, 22, 0.5) !important;
+    padding: 10px;
+    color: #fff;
+  }
+
+  footer a {
+    color: blue;
   }
 
   /* 3D Cube Profile Picture */
