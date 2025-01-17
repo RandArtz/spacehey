@@ -130,15 +130,16 @@
   }
 
   .top .center form .search-wrapper input {
-    transform: skew(-20deg);
-    background: #323232;
+    border: 1px solid #323232 !important;
+    background: #161616;
     border: none;
     width: 200px;
-    height: 20px;
+    height: 21px;
     color: #fff;
   }
 
   .top .center form .search-wrapper input:focus-visible {
+    border: 1px solid #646464 !important;
     outline: none;
   }
 
@@ -146,7 +147,8 @@
     padding: 1px 5px;
   }
 
-  .top .center form button:hover {
+  .top .center form button:hover,
+  .comments-table tr td button:hover {
     cursor: pointer;
   }
 
@@ -192,27 +194,31 @@
   }
 
   nav .links a {
-    padding: 5px 5px;
+    transform: skew(-20deg) !important;
+    padding: 5px 0 20px 0 !important;
+    width: 65px;
+    height: 20px;
   }
 
   nav .links a,
-  .top .center form button {
+  .top .center form button,
+  .comments-table tr td button {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    transform: skew(-20deg);
+    transform: skew(0);
     transition: color 0.3s ease;
     border: 1px solid #323232;
     text-shadow: none;
     background: #161616;
     margin: 0 3px 0 3px;
-    width: 70px;
     text-decoration: none;
     color: #969696;
   }
 
   nav .links a::after,
-  .top .center form button::after {
+  .top .center form button::after,
+  .comments-table tr td button::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -225,12 +231,14 @@
   }
 
   nav .links a:hover::after,
-  .top .center form button:hover::after {
+  .top .center form button:hover::after,
+  .comments-table tr td button:hover::after {
     left: 0;
   }
 
   nav .links a:hover,
-  .top .center form button:hover {
+  .top .center form button:hover,
+  .comments-table tr td button:hover {
     text-decoration: none;
     color: black;
   }
@@ -258,6 +266,8 @@
   }
 
   .profile {
+    border-radius: 20px;
+    background-color: rgba(22, 22, 22, 1);
     margin: 0 auto 10px;
     width: 810px;
     max-width: 100%;
@@ -341,8 +351,7 @@
   }
 
   .contact .heading,
-  .table-section .heading,
-  .blurbs .heading {
+  .table-section .heading {
     border-bottom: 1px solid #323232;
     padding: 5px 0 5px 0 !important;
     font-family: "Poland canned into Vaporwave", sans-serif;
@@ -451,6 +460,10 @@
     letter-spacing: 2px;
   }
 
+  .blog-preview p {
+    padding: 5px;
+  }
+
   .blog-preview a {
     font-family: sans-serif;
     letter-spacing: 0;
@@ -460,10 +473,16 @@
     position: relative;
   }
 
+  .blurbs .heading,
+  .blurbs .inner {
+    position: relative;
+    z-index: 1;
+  }
+
   .blurbs::before {
     content: "";
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     left: 0;
     right: 0;
@@ -480,11 +499,11 @@
     );
   }
 
-  .blurbs .heading::before {
+  .blurbs::after {
     content: "";
     position: absolute;
     z-index: 1;
-    top: 8px;
+    top: 7px;
     left: -0.15em;
     transform: rotate(-45deg);
     background-color: #323232;
@@ -492,16 +511,28 @@
     width: 19px;
   }
 
+  .blurbs .heading {
+    display: none;
+  }
+
+  .blurbs .inner {
+    padding: 10px !important;
+  }
+
   .blurbs .inner::before {
     content: "";
     position: absolute;
     z-index: 1;
-    bottom: 6px;
+    bottom: 7px;
     right: -0.2em;
     transform: rotate(-45deg);
     background-color: #323232;
     height: 1px;
     width: 19px;
+  }
+
+  .blurbs .inner h4 {
+    display: none;
   }
 
   .friends {
@@ -543,6 +574,11 @@
     border: 0;
     border-top: 1px solid #323232;
     border-right: 1px solid #323232;
+    padding: 5px;
+  }
+
+  .comments-table tr td:nth-child(1) img {
+    border-radius: 50%;
   }
 
   .comments-table tr td:first-child {
@@ -590,10 +626,9 @@
   .scene {
     position: relative;
     z-index: 3;
-    bottom: 160px;
+    bottom: 140px;
     right: 270px;
     perspective: 600px;
-    align-items: center;
   }
 
   .cube {
@@ -651,5 +686,16 @@
     <div class="cube-face cube-bottom"></div>
   </div>
 </div>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales purus
+  elit, sit amet euismod ipsum porta non. Suspendisse vehicula ex in tortor
+  elementum, non venenatis justo dictum. Nulla placerat felis quis accumsan
+  suscipit. Nunc vitae est quis nunc tincidunt eleifend id eu nibh. Ut mattis
+  neque ultrices arcu sollicitudin, a posuere odio dapibus. Morbi facilisis,
+  nibh eget rutrum rhoncus, justo erat commodo arcu, vitae volutpat tellus est
+  sit amet justo. Mauris in nisl nec lacus elementum pellentesque vitae et
+  lectus. Donec egestas tellus ac ornare fringilla.
+</p>
 
 <!-- HTML code ends here -->
