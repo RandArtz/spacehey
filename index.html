@@ -1,5 +1,7 @@
 <!-- CSS code starts here -->
 <style>
+  @import url("https://fonts.cdnfonts.com/css/pixel-font7");
+  @import url("https://fonts.cdnfonts.com/css/realpolitik");
   @import url("https://fonts.cdnfonts.com/css/poland-canned-into-vaporwave");
 
   :root {
@@ -35,6 +37,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    font-size: 18px;
   }
 
   .container::before {
@@ -195,30 +198,33 @@
 
   nav .links a {
     transform: skew(-20deg) !important;
-    padding: 5px 0 20px 0 !important;
-    width: 65px;
+    width: 75px;
     height: 20px;
+    font-family: "Realpolitik Condensed", sans-serif;
+    font-size: 14px;
   }
 
   nav .links a,
   .top .center form button,
-  .comments-table tr td button {
+  .comments-table tr td button,
+  footer .links a {
     overflow: hidden;
     position: relative;
     display: inline-block;
     transform: skew(0);
     transition: color 0.3s ease;
     border: 1px solid #323232;
-    text-shadow: none;
     background: #161616;
     margin: 0 3px 0 3px;
+    text-shadow: none;
     text-decoration: none;
     color: #969696;
   }
 
   nav .links a::after,
   .top .center form button::after,
-  .comments-table tr td button::after {
+  .comments-table tr td button::after,
+  footer .links a::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -232,22 +238,26 @@
 
   nav .links a:hover::after,
   .top .center form button:hover::after,
-  .comments-table tr td button:hover::after {
+  .comments-table tr td button:hover::after,
+  footer .links a:hover::after {
     left: 0;
   }
 
   nav .links a:hover,
   .top .center form button:hover,
-  .comments-table tr td button:hover {
+  .comments-table tr td button:hover,
+  footer .links a:hover::after {
     text-decoration: none;
     color: black;
   }
 
-  nav .links a .icon {
+  nav .links a .icon,
+  footer .links a .icon {
     display: none;
   }
 
-  nav .links li:not(:last-child)::after {
+  nav .links li:not(:last-child)::after,
+  footer .links li:not(:last-child)::after {
     content: "";
   }
 
@@ -266,8 +276,6 @@
   }
 
   .profile {
-    border-radius: 20px;
-    background-color: rgba(22, 22, 22, 1);
     margin: 0 auto 10px;
     width: 810px;
     max-width: 100%;
@@ -279,11 +287,13 @@
   .profile .count {
     color: #004589;
     text-decoration: none;
+    transition: 0.3s;
   }
 
   .profile a:hover {
-    text-decoration: underline;
-    text-decoration-style: dotted;
+    color: #fff !important;
+    text-shadow: 0 -1px 4px #fff, 0 -2px 10px #fff, 0 -10px 20px #004589,
+      0 -18px 40px #fff;
   }
 
   .profile h1 {
@@ -374,11 +384,14 @@
     background: #161616;
     margin-bottom: 5px;
     margin-left: -15px;
-    padding-left: 30px !important;
-    padding: 3px;
+    padding-left: 23px !important;
+    padding: 5px;
     width: 142px;
     height: 20px;
+    font-family: "Realpolitik Italic", sans-serif;
+    font-size: 9px !important;
     text-align: left;
+    text-shadow: none;
     text-decoration: none;
     font-size: 10px;
     color: #969696;
@@ -452,11 +465,13 @@
 
   .profile-info {
     font-family: "Poland canned into Vaporwave", sans-serif;
+    font-size: 12px;
   }
 
   .blog-preview h4 {
     font-family: "Poland canned into Vaporwave", sans-serif;
     text-align: center;
+    font-size: 12px;
     letter-spacing: 2px;
   }
 
@@ -548,11 +563,26 @@
 
   .friends .heading h4 {
     font-family: "Poland canned into Vaporwave", sans-serif;
+    font-size: 12px;
     letter-spacing: 2px;
+  }
+
+  .friends .heading .more {
+    margin-right: 5px;
   }
 
   .friends .inner {
     text-align: center;
+  }
+
+  .friends .person a p {
+    transition: all 0.3s ease-in-out;
+    font-family: "Realpolitik", sans-serif;
+    color: #004589 !important;
+  }
+
+  .friends .person a p:hover {
+    color: #fff !important;
   }
 
   .friends .person a:nth-child(2) img {
@@ -595,21 +625,18 @@
     border-top: 1px solid #323232;
     box-shadow: inset 0px 2px 0px 0px #161616;
     background-color: #242424 !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23323232' stroke-width='7.4' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E") !important;
-  }
-
-  footer p {
-    display: table;
-    float: center;
-    border: 1px solid #323232;
-    border-radius: 20px;
-    background-color: rgba(22, 22, 22, 0.5) !important;
-    padding: 10px;
-    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23323232' stroke-width='7.4' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
   }
 
   footer a {
     color: blue;
+  }
+
+  footer .links a {
+    transform: skew(-20deg) !important;
+    padding: 5px 0 20px 0 !important;
+    width: 65px;
+    height: 20px;
   }
 
   /* 3D Cube Profile Picture */
