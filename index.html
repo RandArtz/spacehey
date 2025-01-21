@@ -1,7 +1,6 @@
 <!-- CSS code starts here -->
 <style>
-  @import url("https://fonts.cdnfonts.com/css/pixel-font7");
-  @import url("https://fonts.cdnfonts.com/css/realpolitik");
+  @import url("https://fonts.cdnfonts.com/css/sf-pixelate");
   @import url("https://fonts.cdnfonts.com/css/poland-canned-into-vaporwave");
 
   :root {
@@ -37,6 +36,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    font-family: "SF Pixelate", sans-serif;
     font-size: 18px;
   }
 
@@ -147,7 +147,8 @@
   }
 
   .top .center form button {
-    padding: 1px 5px;
+    font-family: "SF Pixelate", sans-serif;
+    padding: 1.5px 5px;
   }
 
   .top .center form button:hover,
@@ -175,6 +176,10 @@
     right: 70px;
   }
 
+  .top .right .logout-form .logout-btn {
+    font-family: "SF Pixelate", sans-serif;
+  }
+
   nav .links {
     position: relative;
     box-shadow: 0 1px 0 #161616, 0 -5px 8px rgba(0, 0, 0, 0.3);
@@ -197,10 +202,11 @@
   }
 
   nav .links a {
-    transform: skew(-20deg) !important;
-    width: 75px;
+    transform: skew(-20deg) scale(0.9, 1.1) !important;
+    margin: 2px -5px !important;
+    width: 90px;
     height: 20px;
-    font-family: "Realpolitik Condensed", sans-serif;
+    font-family: "SF Pixelate", sans-serif;
     font-size: 14px;
   }
 
@@ -370,6 +376,10 @@
     letter-spacing: 2px;
   }
 
+  .mood p:nth-child(2) {
+    font-size: 10px;
+  }
+
   .contact .inner {
     padding-bottom: 5px !important;
     text-align: center;
@@ -384,11 +394,10 @@
     background: #161616;
     margin-bottom: 5px;
     margin-left: -15px;
-    padding-left: 23px !important;
+    padding-left: 30px !important;
     padding: 5px;
     width: 142px;
     height: 20px;
-    font-family: "Realpolitik Italic", sans-serif;
     font-size: 9px !important;
     text-align: left;
     text-shadow: none;
@@ -414,16 +423,40 @@
   }
 
   .contact .inner a img {
-    font-size: 0;
-  }
-
-  .contact .inner a img:before {
-    font-size: 1em;
-    display: block;
+    display: none;
   }
 
   .contact .inner .f-row:nth-child(1) .f-col:nth-child(1) a:before {
-    content: "";
+    content: " ➠";
+    font-size: 18px;
+  }
+  .contact .inner .f-row:nth-child(1) .f-col:nth-child(2) a:before {
+    content: " ➠";
+    font-size: 18px;
+  }
+  .contact .inner .f-row:nth-child(2) .f-col:nth-child(1) a:before {
+    content: " ➠";
+    font-size: 18px;
+  }
+  .contact .inner .f-row:nth-child(2) .f-col:nth-child(2) a:before {
+    content: " ➠";
+    font-size: 18px;
+  }
+  .contact .inner .f-row:nth-child(3) .f-col:nth-child(1) a:before {
+    content: " ➠";
+    font-size: 18px;
+  }
+  .contact .inner .f-row:nth-child(3) .f-col:nth-child(2) a:before {
+    content: " ➠";
+    font-size: 18px;
+  }
+  .contact .inner .f-row:nth-child(4) .f-col:nth-child(1) a:before {
+    content: " ➠";
+    font-size: 18px;
+  }
+  .contact .inner .f-row:nth-child(4) .f-col:nth-child(2) a:before {
+    content: " ➠";
+    font-size: 18px;
   }
 
   .url-info,
@@ -480,8 +513,7 @@
   }
 
   .blog-preview a {
-    font-family: sans-serif;
-    letter-spacing: 0;
+    font-family: "SF Pixelate", sans-serif;
   }
 
   .blurbs {
@@ -577,7 +609,7 @@
 
   .friends .person a p {
     transition: all 0.3s ease-in-out;
-    font-family: "Realpolitik", sans-serif;
+    font-family: "SF Pixelate", sans-serif;
     color: #004589 !important;
   }
 
@@ -620,6 +652,27 @@
     border-bottom: 1px solid #323232 !important;
   }
 
+  .comments-table .comment-replies {
+    border: 1px solid #323232;
+  }
+
+  .comments-table tr td button {
+    margin-left: 0;
+    margin-top: 5px;
+    padding: 5px 5px;
+    font-family: "SF Pixelate", sans-serif;
+    font-size: 10px;
+  }
+
+  .comments-table .report img {
+    display: none;
+  }
+
+  .comments-table .report a:before {
+    content: "⚐";
+    font-size: 18px;
+  }
+
   footer {
     animation: bg-anim 30s linear infinite;
     border-top: 1px solid #323232;
@@ -653,7 +706,7 @@
   .scene {
     position: relative;
     z-index: 3;
-    bottom: 140px;
+    bottom: 130px;
     right: 270px;
     perspective: 600px;
   }
@@ -722,7 +775,7 @@
   neque ultrices arcu sollicitudin, a posuere odio dapibus. Morbi facilisis,
   nibh eget rutrum rhoncus, justo erat commodo arcu, vitae volutpat tellus est
   sit amet justo. Mauris in nisl nec lacus elementum pellentesque vitae et
-  lectus. Donec egestas tellus ac ornare fringilla.
+  lectus. Donec egestas tellus ac ornare fringilla. ᘛ⁐̤ᕐᐷ
 </p>
 
 <!-- HTML code ends here -->
